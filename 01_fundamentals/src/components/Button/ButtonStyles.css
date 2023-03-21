@@ -1,0 +1,16 @@
+button {
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    background: darkcyan;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #888;
+    cursor: not-allowed;
+}

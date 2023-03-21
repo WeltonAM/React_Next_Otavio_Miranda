@@ -1,5 +1,5 @@
 {
-  "name": "01_fundamentals",
+  "name": "02_hooks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,8 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "msw": "^1.1.1"
   }
 }
