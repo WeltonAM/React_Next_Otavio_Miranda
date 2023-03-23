@@ -7,6 +7,8 @@ import Input from './components/Input';
 import Div from './components/Card';
 import Section from './components/Section';
 import Main from './components/Main';
+import Clone from './components/Clone';
+import Splitting from './components/Splitting';
 
 const Button = ({ incrementButton }) => {
   console.log('without memo and callback');
@@ -114,6 +116,18 @@ function App() {
         <h1>Own Hook</h1>
         <div className='App-header'>
           <Main />
+        </div>
+        <hr />
+
+        <h1>Compound Components</h1>
+        <div className='App-header'>
+          <Clone />
+        </div>
+        <hr />
+
+        <h1>Splitting Code</h1>
+        <div className='App-header'>
+          <Splitting />
         </div>
 
       </div>
