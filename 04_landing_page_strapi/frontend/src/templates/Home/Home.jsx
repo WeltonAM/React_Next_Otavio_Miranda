@@ -1,18 +1,16 @@
 import React from "react"
 
 import { Wrapper } from './HomeStyle';
-import Heading from "../../components/Heading/Heading";
+import TextComponent from '../../components/TextComponent/TextComponent';
+import NavLinks from "../../components/NavLinks/NavLiks";
+import LogoLink from "../../components/LogoLink/LogoLink";
 
 function Home() {
   return (
     <Wrapper className="Home">
-      <Heading 
-        darkColor={true}
-        size="huge"
-        upperCase={true}
-      >
-        Hello
-      </Heading>
+      <LogoLink />
+      <TextComponent>Children</TextComponent>
+      <NavLinks />
     </Wrapper>
   );
 }
