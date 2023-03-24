@@ -16,7 +16,7 @@ describe('<LogoLink />', () => {
 
     it('should render image logo', () => {
         renderTheme(
-            <LogoLink link="#target" text="Hello" srcImg="image.jpg" />,
+            <LogoLink link="#target" text="Hello" imgSrc="image.jpg" />,
         );
         expect(screen.getByAltText('Hello')).toHaveAttribute(
             'src',
@@ -26,7 +26,7 @@ describe('<LogoLink />', () => {
 
     it('should match snapshot', () => {
         const { container } = renderTheme(
-            <LogoLink link="#target" text="Hello" srcImg="image.jpg" />,
+            <LogoLink link="#target" text="Hello" imgSrc="image.jpg" />,
         );
         // eslint-disable-next-line testing-library/no-node-access
         expect(container.firstChild).toMatchSnapshot();

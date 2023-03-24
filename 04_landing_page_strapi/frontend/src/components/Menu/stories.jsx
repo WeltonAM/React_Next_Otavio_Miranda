@@ -11,7 +11,7 @@ export default {
         logoData: {
             text: 'Logo',
             link: '#target',
-            srcImg: '',
+            imgSrc: '',
         },
     },
 };

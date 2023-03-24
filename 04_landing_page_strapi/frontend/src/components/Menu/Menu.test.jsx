@@ -33,23 +33,23 @@ describe('<Menu />', () => {
 
         expect(button).toHaveStyleRule('display', 'none');
         expect(button).toHaveStyleRule('display', 'flex', {
-            media: theme.media.lteMedium,
+            media: theme.media.mediumScreen,
         });
 
         expect(menuContainer).toHaveStyleRule('opacity', '0', {
-            media: theme.media.lteMedium,
+            media: theme.media.mediumScreen,
         });
         expect(screen.getByLabelText('Open menu')).toBeInTheDocument();
 
         fireEvent.click(button);
         expect(menuContainer).toHaveStyleRule('opacity', '1', {
-            media: theme.media.lteMedium,
+            media: theme.media.mediumScreen,
         });
         expect(screen.getByLabelText('Close menu')).toBeInTheDocument();
 
         fireEvent.click(menuContainer);
         expect(menuContainer).toHaveStyleRule('opacity', '0', {
-            media: theme.media.lteMedium,
+            media: theme.media.mediumScreen,
         });
         expect(screen.getByLabelText('Open menu')).toBeInTheDocument();
     });

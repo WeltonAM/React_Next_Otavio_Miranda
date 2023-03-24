@@ -1,8 +1,8 @@
-import { Container } from './TextComponentStyle';
+import * as Styled from './TextComponentStyle';
 
 const TextComponent = ({ children }) => {
   return (
-    <Container dangerouslySetInnerHTML={{ __html: children }} />
+    <Styled.Container dangerouslySetInnerHTML={{ __html: children }} />
   )
 }
 

@@ -17,7 +17,7 @@ describe('<Heading />', () => {
     });
 
     it('should render with white color', () => {
-        renderTheme(<Heading colorDark={false}>text</Heading>);
+        renderTheme(<Heading darkColor={false}>text</Heading>);
         const heading = screen.getByRole('heading', { name: 'text' });
 
         expect(heading).toHaveStyle({
@@ -48,7 +48,7 @@ describe('<Heading />', () => {
                 <Heading size="medium">text</Heading>
             </Theme>,
         );
-        
+
         expect(screen.getByRole('heading', { name: 'text' })).toHaveStyle({
             'font-size': theme.font.sizes.huge,
         });
@@ -74,7 +74,7 @@ describe('<Heading />', () => {
     });
 
     it('should render with uppercase letters', () => {
-        renderTheme(<Heading uppercase={true}>text</Heading>);
+        renderTheme(<Heading upperCase={true}>text</Heading>);
         const heading = screen.getByRole('heading', { name: 'text' });
 
         expect(heading).toHaveStyle({
@@ -86,7 +86,7 @@ describe('<Heading />', () => {
         renderTheme(<Heading as="h3">text</Heading>);
         screen.getByRole('heading', { name: 'text' });
         const h3 = screen.getByRole('h3');
- 
+
         expect(h3.tagName.toLowerCase()).toBe('h3');
     });
 });

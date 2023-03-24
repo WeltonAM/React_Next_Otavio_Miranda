@@ -22,12 +22,20 @@ const Menu = ({ links = [], logoData }) => {
                     <MenuIcon aria-label="Open menu" />
                 )}
             </Styled.Button>
-            <Styled.Container visible={visible} onClick={() => setVisible(false)}>
+
+            <Styled.Container
+                visible={visible}
+                onClick={() => setVisible(false)}
+            >
+
                 <SectionContainer>
+
                     <Styled.MenuContainer>
                         <LogoLink {...logoData} />
+
                         <NavLinks links={links} />
                     </Styled.MenuContainer>
+
                 </SectionContainer>
             </Styled.Container>
         </>

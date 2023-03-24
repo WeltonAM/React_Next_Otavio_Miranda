@@ -26,6 +26,7 @@ export const Container = styled.div`
       margin-top: 0;
       margin-bottom: 0;
     }
+    
     @media ${theme.media.mediumScreen} {
       height: 100vh;
       visibility: hidden;
@@ -53,6 +54,7 @@ export const MenuContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     @media ${theme.media.mediumScreen} {
       display: block;
       text-align: center;
@@ -74,6 +76,7 @@ export const Button = styled.button`
     border: none;
     display: none;
     pointer-events: ${visible ? 'none' : 'all'};
+
     @media ${theme.media.mediumScreen} {
       display: flex;
       align-items: center;
