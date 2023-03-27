@@ -17,13 +17,7 @@ export type GridTextProps = {
   component?: string;
 };
 
-export const GridText = ({
-  title,
-  description,
-  grid,
-  background = false,
-  sectionId = '',
-}: GridTextProps) => {
+export const GridText = ({ title, description, grid, background = false, sectionId = '' }: GridTextProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>

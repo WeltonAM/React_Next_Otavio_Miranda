@@ -4,23 +4,15 @@ import { mapMenu } from './map-menu';
 import { mapSections } from './map-sections';
 
 export const mapData = (pagesData = [{}] as any): PageData[] => {
-  return pagesData.map(
-    (data: any): PageData => {
-      const {
-        footer_text: footerHtml = '',
-        slug = '',
-        title = '',
-        sections = [],
-        menu = {},
-      } = data;
+  return pagesData.map((data: any): PageData => {
+    const { footer_text: footerHtml = '', slug = '', title = '', sections = [], menu = {} } = data;
 
-      return {
-        footerHtml,
-        slug,
-        title,
-        sections: mapSections(sections),
-        menu: mapMenu(menu),
-      };
-    },
-  );
+    return {
+      footerHtml,
+      slug,
+      title,
+      sections: mapSections(sections),
+      menu: mapMenu(menu),
+    };
+  });
 };

@@ -1,5 +1,5 @@
 export default {
-  url: '',
+  url: 'http://localhost:1337',
   siteName: 'Landing Page',
   defaultSlug: 'page',
 };

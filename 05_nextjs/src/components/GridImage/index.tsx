@@ -17,13 +17,7 @@ export type GridImageProps = {
   component?: string;
 };
 
-export const GridImage = ({
-  title,
-  description,
-  grid,
-  background = false,
-  sectionId = '',
-}: GridImageProps) => {
+export const GridImage = ({ title, description, grid, background = false, sectionId = '' }: GridImageProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>

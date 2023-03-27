@@ -10,9 +10,7 @@ describe('<GridImage />', () => {
   });
 
   it('should render without background', () => {
-    const { container } = renderTheme(
-      <GridImage {...mock} background={undefined} />,
-    );
+    const { container } = renderTheme(<GridImage {...mock} background={undefined} />);
     expect(container).toMatchSnapshot();
   });
 });

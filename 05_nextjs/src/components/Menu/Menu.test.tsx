@@ -11,13 +11,9 @@ const logoData = {
 
 describe('<Menu />', () => {
   it('should render Logo and Main Menu Nav', () => {
-    const { container } = renderTheme(
-      <Menu links={linksMock} logoData={logoData} />,
-    );
+    const { container } = renderTheme(<Menu links={linksMock} logoData={logoData} />);
     expect(screen.getByRole('heading', { name: 'Logo' })).toBeInTheDocument();
-    expect(
-      screen.getByRole('navigation', { name: 'Main menu' }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('navigation', { name: 'Main menu' })).toBeInTheDocument();
 
     expect(container).toMatchSnapshot();
   });
@@ -53,9 +49,7 @@ describe('<Menu />', () => {
 
   it('should not render links', () => {
     const { container } = renderTheme(<Menu logoData={logoData} />);
-    expect(
-      screen.queryByRole('navigation', { name: 'Main menu' }).firstChild,
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('navigation', { name: 'Main menu' }).firstChild).not.toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 });

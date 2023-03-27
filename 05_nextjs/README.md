@@ -7,3 +7,5 @@ A well demonstrative NEXTJs technology use:
 - ISR: Incremental Side Regeneration;
 - SSG: Static Side Generation;
 - TDD: Test Driven Development;
+
+API from chapter 04

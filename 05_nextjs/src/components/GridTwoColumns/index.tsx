@@ -12,13 +12,7 @@ export type GridTwoColumnsProps = {
   component?: string;
 };
 
-export const GridTwoColumns = ({
-  title,
-  text,
-  srcImg,
-  background = false,
-  sectionId = '',
-}: GridTwoColumnsProps) => {
+export const GridTwoColumns = ({ title, text, srcImg, background = false, sectionId = '' }: GridTwoColumnsProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>

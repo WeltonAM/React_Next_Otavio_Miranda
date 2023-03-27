@@ -16,16 +16,16 @@ export default function Page({ data }: HomeProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // const paths = (await loadPages()).map((page) => {
-  //   return {
-  //     params: {
-  //       slug: page.slug,
-  //     },
-  //   };
-  // });
+  const paths = (await loadPages()).map((page) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+    };
+  });
 
   return {
-    paths: [{ params: { slug: 'udemy' } }],
+    paths,
     fallback: true,
   };
 };

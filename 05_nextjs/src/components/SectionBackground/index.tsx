@@ -7,11 +7,7 @@ export type SectionBackgroundProps = {
   sectionId?: string;
 };
 
-export const SectionBackground = ({
-  children,
-  background = false,
-  sectionId = '',
-}: SectionBackgroundProps) => {
+export const SectionBackground = ({ children, background = false, sectionId = '' }: SectionBackgroundProps) => {
   return (
     <Styled.Container background={background} id={sectionId}>
       <SectionContainer>{children}</SectionContainer>

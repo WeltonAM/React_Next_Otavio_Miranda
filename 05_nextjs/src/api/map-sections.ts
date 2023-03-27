@@ -29,9 +29,7 @@ export const mapSections = (sections = []): SectionProps[] => {
   });
 };
 
-export const mapSectionTwoColumns = (
-  section = {} as any,
-): GridTwoColumnsProps => {
+export const mapSectionTwoColumns = (section = {} as any): GridTwoColumnsProps => {
   const {
     __component: component = '',
     title = '',
@@ -81,15 +79,13 @@ export const mapTextGrid = (section = {} as any): GridTextProps => {
     background,
     sectionId,
     description,
-    grid: grid.map(
-      (text: any): GridTextElementProps => {
-        const { title = '', description = '' } = text;
-        return {
-          title,
-          description,
-        };
-      },
-    ),
+    grid: grid.map((text: any): GridTextElementProps => {
+      const { title = '', description = '' } = text;
+      return {
+        title,
+        description,
+      };
+    }),
   };
 };
 
@@ -107,16 +103,12 @@ export const mapImageGrid = (section = {} as any): GridImageProps => {
     background,
     sectionId,
     description,
-    grid: grid.map(
-      (img: any): GridImageElementProps => {
-        const {
-          image: { url: srcImg = '', alternativeText: altText = '' } = '',
-        } = img;
-        return {
-          srcImg,
-          altText,
-        };
-      },
-    ),
+    grid: grid.map((img: any): GridImageElementProps => {
+      const { image: { url: srcImg = '', alternativeText: altText = '' } = '' } = img;
+      return {
+        srcImg,
+        altText,
+      };
+    }),
   };
 };

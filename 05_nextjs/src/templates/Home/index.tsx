@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Head from 'next/head';
 
 import { GridTwoColumns, GridTwoColumnsProps } from '../../components/GridTwoColumns';
@@ -9,6 +10,7 @@ import config from '../../config';
 import { theme } from '../../styles/theme';
 import { LogoLinkProps } from '../../components/LogoLink';
 import { MenuLinkProps } from '../../components/MenuLink';
+// import { mockBase } from '../Base/mock';
 
 export type PageData = {
   title: string;
@@ -29,7 +31,10 @@ function Home({ data }: HomeProps) {
   const { links, text, link, srcImg } = menu;
 
   return (
-    <Base links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}>
+    <Base
+      // {...mockBase}
+      links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}
+    >
       <Head>
         <title>
           {title} | {config.siteName}

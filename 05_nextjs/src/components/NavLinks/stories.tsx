@@ -11,7 +11,7 @@ export default {
   argTypes: {
     links: { type: '' },
   },
-} as Meta;
+} as unknown as Meta;
 
 export const Template: Story<NavLinksProps> = (args) => {
   return (
