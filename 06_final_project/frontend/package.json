@@ -1,37 +1,64 @@
 {
-  "name": "strapi-blog",
-  "private": true,
+  "name": "frontend",
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "private": true,
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi",
-    "postinstall": "cd plugins/wysiwyg && npm i"
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook",
+    "test": "jest",
+    "deploy-static": "npm run build && npm run export",
+    "lint": "eslint src --max-warnings=0",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
-  "devDependencies": {},
   "dependencies": {
-    "strapi": "3.5.2",
-    "strapi-admin": "3.5.2",
-    "strapi-utils": "3.5.2",
-    "strapi-plugin-content-type-builder": "3.5.2",
-    "strapi-plugin-content-manager": "3.5.2",
-    "strapi-plugin-users-permissions": "3.5.2",
-    "strapi-plugin-email": "3.5.2",
-    "strapi-plugin-upload": "3.5.2",
-    "strapi-connector-mongoose": "3.5.2",
-    "strapi-provider-upload-cloudinary": "^3.5.0"
+    "@styled-icons/material-outlined": "^10.28.0",
+    "disqus-react": "^1.0.11",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
+    "next": "^13.2.4",
+    "prismjs": "^1.23.0",
+    "prop-types": "^15.7.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "styled-components": "^5.2.1"
   },
-  "author": {
-    "name": "A Strapi developer"
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@storybook/addon-actions": "^6.1.20",
+    "@storybook/addon-essentials": "^6.1.20",
+    "@storybook/addon-links": "^6.1.20",
+    "@storybook/react": "^6.1.20",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@types/node": "^14.14.31",
+    "@types/prismjs": "^1.16.3",
+    "@types/react": "^17.0.55",
+    "@types/styled-components": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.1.2",
+    "jest": "^26.6.3",
+    "jest-styled-components": "^7.0.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.2"
   },
-  "strapi": {
-    "uuid": "64bc885c-fc3f-4572-ab99-403de760b531"
-  },
-  "engines": {
-    "node": "<=14.x.x",
-    "npm": "<=6.0.0"
-  },
-  "license": "MIT"
+  "lint-staged": {
+    "src/**/*": [
+      "npm run lint -- --fix",
+      "npm test -- --findRelatedTests --bail"
+    ]
+  }
 }
