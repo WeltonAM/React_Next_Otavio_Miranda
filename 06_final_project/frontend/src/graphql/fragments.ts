@@ -1,75 +1,104 @@
 import { gql } from 'graphql-request';
 
 export const GRAPHQL_FRAGMENTS = gql`
-  fragment image on UploadFile {
-    id
-    alternativeText
-    url
+fragment image on UploadFile {
+  alternativeText
+  url
+}
+
+fragment tag on Tag {
+  displayName
+  slug
+}
+
+fragment cover on Post {
+  cover {
+    data {
+      id
+      attributes {
+        ...image
+      }
+    }
   }
-  fragment cover on Post {
-    cover {
+}
+
+fragment author on Author {
+  displayName
+  slug
+}
+
+fragment category on Category {
+  displayName
+  slug
+}
+
+fragment tags on Post {
+  tags {
+    data {
+      id
+      attributes {
+        ...tag
+      }
+    }
+  }
+}
+
+fragment authorPost on Post {
+  author {
+    data {
+      id
+      attributes {
+        ...author
+      }
+    }
+  }
+}
+
+fragment categories on Post {
+  categories {
+    data {
+      id
+      attributes {
+        ...category
+      }
+    }
+  }
+}
+
+fragment menuLink on ComponentMenuMenuLink {
+  id
+  link
+  text
+  newTab
+}
+
+fragment post on Post {
+  slug
+  title
+  excerpt
+  content
+  createdAt
+  allowComments
+  ...cover
+  ...categories
+  ...tags
+  ...authorPost
+}
+
+fragment settings on Setting {
+  blogName
+  blogDescription
+logo {
+  data {
+      id
+    attributes {
       ...image
+      }
     }
   }
-  fragment tag on Tag {
-    id
-    displayName
-    slug
+menuLink {
+...menuLink
   }
-  fragment author on Author {
-    id
-    displayName
-    slug
-  }
-  fragment category on Category {
-    id
-    displayName
-    slug
-  }
-  fragment tags on Post {
-    tags {
-      ...tag
-    }
-  }
-  fragment authorPost on Post {
-    author {
-      ...author
-    }
-  }
-  fragment categories on Post {
-    categories {
-      ...category
-    }
-  }
-  fragment menuLink on ComponentMenuMenuLink {
-    id
-    link
-    text
-    newTab
-  }
-  fragment post on Post {
-    id
-    slug
-    title
-    excerpt
-    content
-    createdAt
-    allowComments
-    ...cover
-    ...categories
-    ...tags
-    ...authorPost
-  }
-  fragment settings on Settings {
-    id
-    blogName
-    blogDescription
-    logo {
-      ...image
-    }
-    menuLink {
-      ...menuLink
-    }
-    text
-  }
+  text
+}
 `;

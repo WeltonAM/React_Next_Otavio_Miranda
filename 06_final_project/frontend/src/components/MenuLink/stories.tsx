@@ -1,13 +1,14 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { MenuLink, MenuLinkProps } from '.';
 import { theme } from '../../styles/theme';
+import mock from '../Menu/mock';
 
 export default {
     title: 'MenuLink',
     component: MenuLink,
     args: {
         children: 'MenuLink',
-        link: 'https://www.google.com.br/',
+        link: mock.links[0].link,
     },
     argTypes: {
         children: { type: 'string' },

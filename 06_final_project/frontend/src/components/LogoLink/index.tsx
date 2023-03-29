@@ -22,8 +22,8 @@ export const LogoLink = ({
     if (nextLink) {
         return (
             <Heading size="small" uppercase>
-                <Link href={link} passHref>
-                    <Styled.Container target={target}>
+                <Link href={link} passHref target={target}>
+                    <Styled.Container>
                         {!!srcImg && <img src={srcImg} alt={text} />}
                         {!srcImg && text}
                     </Styled.Container>
@@ -34,10 +34,12 @@ export const LogoLink = ({
 
     return (
         <Heading size="small" uppercase>
-            <Styled.Container href={link} target={target}>
-                {!!srcImg && <img src={srcImg} alt={text} />}
-                {!srcImg && text}
-            </Styled.Container>
+            <Link href={link} target={target}>
+                <Styled.Container >
+                    {!!srcImg && <img src={srcImg} alt={text} />}
+                    {!srcImg && text}
+                </Styled.Container>
+            </Link>
         </Heading>
     );
 };

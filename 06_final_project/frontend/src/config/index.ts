@@ -1,8 +1,8 @@
 const config = {
-    url: 'https://localhost:1337',
+    url: 'http://localhost:1337/api/posts',
     siteName: 'Blog Next',
     defaultSlug: 'blog',
-    graphqlURL: 'https://localhost:1337/graphql',
+    graphqlURL: 'http://localhost:1337/graphql',
 };
 
 export default config;

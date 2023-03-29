@@ -1,22 +1,27 @@
 import { ArticleMetaProps } from '.';
+import { data } from '../../api/data.json';
+
+const createdAt = data.posts.data[0].attributes.createdAt;
+const author = data.posts.data[0].attributes.author.data;
+const categories = data.posts.data[0].attributes.categories.data;
 
 export default {
-    createdAt: '2021-03-02T15:16:09.246+00:00',
+    createdAt,
     author: {
-        id: '123456789',
-        slug: 'otavio-miranda',
-        displayName: 'Otávio Miranda',
+        id: author.id,
+        slug: author.attributes.slug,
+        displayName: author.attributes.displayName,
     },
     categories: [
         {
-            id: 'asdslgyh65',
-            displayName: 'Tech',
-            slug: 'tech',
+            id: categories[0].id,
+            displayName: categories[0].attributes.displayName,
+            slug: categories[0].attributes.slug,
         },
         {
-            id: 'asdslgyh66',
-            displayName: 'JS',
-            slug: 'javascript',
+            id: categories[1].id,
+            displayName: categories[1].attributes.displayName,
+            slug: categories[1].attributes.slug,
         },
     ],
 } as ArticleMetaProps;

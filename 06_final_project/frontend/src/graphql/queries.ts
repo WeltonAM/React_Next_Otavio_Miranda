@@ -4,35 +4,40 @@ import { GRAPHQL_FRAGMENTS } from './fragments';
 export const GRAPHQL_QUERY = gql`
   ${GRAPHQL_FRAGMENTS}
   query GET_POSTS(
-    $categorySlug: String
-    $postSlug: String
-    $postSearch: String
-    $authorSlug: String
-    $tagSlug: String
-    $sort: String = "createdAt:desc"
-    $start: Int = 0
-    $limit: Int = 10
+    $categorySlug: StringFilterInput
+    $postSlug: StringFilterInput
+    $postSearch: StringFilterInput
+    $authorSlug: StringFilterInput
+    $tagSlug: StringFilterInput
+    $sort: [String] = "createdAt:desc"
   ) {
     setting {
-      ...settings
+      data {
+        attributes {
+          ...settings
+        }
+      }
     }
     posts(
-      start: $start
-      limit: $limit
       sort: $sort
-      where: {
+      filters: {
         slug: $postSlug
-        _or: [
-          { title_contains: $postSearch }
-          { content_contains: $postSearch }
-          { excerpt_contains: $postSearch }
+        or: [
+          { title: $postSearch }
+          { content: $postSearch }
+          { excerpt: $postSearch }
         ]
         categories: { slug: $categorySlug }
         author: { slug: $authorSlug }
         tags: { slug: $tagSlug }
       }
     ) {
-      ...post
+      data {
+        id
+        attributes {
+          ...post
+        }
+      }
     }
   }
 `;

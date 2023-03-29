@@ -37,8 +37,8 @@ export const ArticleMeta = ({
                             {categories.map((category) => {
                                 return (
                                     <span key={`article-meta-cat-${category.id}`}>
-                                        <Link href={`/category/${category.slug}`}>
-                                            {category.displayName}
+                                        <Link href={`/category/${category.attributes.displayName}`}>
+                                            {category.attributes.displayName}
                                         </Link>
                                     </span>
                                 );

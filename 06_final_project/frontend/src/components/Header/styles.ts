@@ -12,9 +12,11 @@ export const Wrapper = styled.header`
     color: ${theme.colors.darkText};
     font-size: ${theme.font.sizes.small};
     margin: 0 auto;
+
     ${HeadingStyles} {
       margin: 0 0 calc(${theme.spacings.small} - 1rem);
     }
+
     @media ${theme.media.lteSmall} {
       display: flex;
       flex-flow: column wrap;
@@ -31,6 +33,7 @@ export const Content = styled.div`
     flex-flow: column wrap;
     margin-left: ${theme.spacings.large};
     max-width: 48rem;
+    
     @media ${theme.media.lteSmall} {
       margin-left: 0;
     }

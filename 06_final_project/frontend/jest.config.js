@@ -16,10 +16,8 @@ module.exports = {
         '!<rootDir>/**/stories.{js,jsx,ts,tsx}',
         '!<rootDir>/node_modules/',
     ],
-
     testEnvironment: 'jsdom',
     testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
     testPathIgnorePatterns: ['/node_modules/', '/.next/', '/.out/', '/public/'],
-
-    setupFilesAfterEnv: ['<rootDir>/.jest/setup-tests.js'],
+    setupFilesAfterEnv: ['<rootDir>/.jest/setup-tests.ts'],
 };

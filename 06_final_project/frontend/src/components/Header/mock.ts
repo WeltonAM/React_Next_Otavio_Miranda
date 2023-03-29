@@ -1,9 +1,13 @@
 import { HeaderProps } from '.';
+import { data } from '../../api/data.json';
+
+const blogName = data.setting.data.attributes.blogName;
+const blogDescription = data.setting.data.attributes.blogDescription;
+const logo = data.setting.data.attributes.logo.data.attributes.url;
 
 export default {
-    blogName: 'Next/Strapi Blog',
-    blogDescription:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
-    logo: '/assets/images/blog.png',
+    blogName,
+    blogDescription,
+    logo,
     showText: true,
 } as HeaderProps;
