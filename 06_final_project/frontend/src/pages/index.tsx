@@ -25,7 +25,9 @@ export default function Index({
   );
 }
 
-export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async () => {
+export const getStaticProps: GetStaticProps<
+  StrapiPostAndSettings
+> = async () => {
   let data = null;
 
   try {
