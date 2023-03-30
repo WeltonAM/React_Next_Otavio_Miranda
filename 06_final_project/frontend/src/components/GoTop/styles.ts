@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.a`
+export const Container = styled.p`
   ${({ theme }) => css`
     position: fixed;
     background: ${theme.colors.primary};

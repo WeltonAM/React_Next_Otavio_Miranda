@@ -25,35 +25,30 @@ export const BlogThemeProvider = ({ children }: BlogThemeProviderProps) => {
     setBlogTheme(newTheme);
   }, []);
 
-  const handleSetTheme: BlogThemeContextValues['setTheme'] = useCallback(
-    (mode = 'default') => {
-      if (mode === 'default') {
-        setBlogTheme(theme);
-        localStorage.setItem('theme', JSON.stringify(theme));
-      } else {
-        const newTheme = {
-          ...theme,
-          name: 'inverted',
-          colors: {
-            primary: '#FFFFFF',
-            darkText: '#F9f9f9',
-            secondary: '#dc143c',
-            white: '#000000',
-            mediumGray: '#f9f9f9',
-            darkerGray: '#CCCCCC',
-          },
-        };
-        setBlogTheme(newTheme);
-        localStorage.setItem('theme', JSON.stringify(newTheme));
-      }
-    },
-    [],
-  );
+  const handleSetTheme: BlogThemeContextValues['setTheme'] = useCallback((mode = 'default') => {
+    if (mode === 'default') {
+      setBlogTheme(theme);
+      localStorage.setItem('theme', JSON.stringify(theme));
+    } else {
+      const newTheme = {
+        ...theme,
+        name: 'inverted',
+        colors: {
+          primary: '#FFFFFF',
+          darkText: '#F9f9f9',
+          secondary: '#dc143c',
+          white: '#000000',
+          mediumGray: '#f9f9f9',
+          darkerGray: '#CCCCCC',
+        },
+      };
+      setBlogTheme(newTheme);
+      localStorage.setItem('theme', JSON.stringify(newTheme));
+    }
+  }, []);
 
   return (
-    <BlogThemeContext.Provider
-      value={{ theme: blogTheme, setTheme: handleSetTheme }}
-    >
+    <BlogThemeContext.Provider value={{ theme: blogTheme, setTheme: handleSetTheme }}>
       <ThemeProvider theme={blogTheme}>{children}</ThemeProvider>
     </BlogThemeContext.Provider>
   );

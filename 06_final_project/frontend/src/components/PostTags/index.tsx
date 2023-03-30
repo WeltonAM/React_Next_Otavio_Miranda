@@ -17,9 +17,7 @@ export const PostTags = ({ tags = [] }: PostTagsProps) => {
       {tags.map((tag) => {
         return (
           <span key={tag.id}>
-            <Link href={`/tag/${tag.slug}`}>
-              <a>{tag.displayName}</a>
-            </Link>
+            <Link href={`/tag/${tag.slug}`}>{tag.displayName}</Link>
           </span>
         );
       })}

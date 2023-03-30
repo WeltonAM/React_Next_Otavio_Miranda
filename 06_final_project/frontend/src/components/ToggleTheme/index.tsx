@@ -29,12 +29,7 @@ export const ToggleTheme = () => {
     <Styled.Wrapper>
       <Styled.Label>
         Toggle light and dark modes
-        <Styled.Input
-          type="checkbox"
-          value="Dark mode active"
-          onChange={handleChange}
-          checked={checked}
-        />
+        <Styled.Input type="checkbox" value="Dark mode active" onChange={handleChange} checked={checked} />
         <Styled.Slider></Styled.Slider>
       </Styled.Label>
     </Styled.Wrapper>

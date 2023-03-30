@@ -1,18 +1,10 @@
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
-import {
-  defaultLoadPostsVariables,
-  loadPosts,
-  StrapiPostAndSettings,
-} from '../../api/load-posts';
+import { defaultLoadPostsVariables, loadPosts, StrapiPostAndSettings } from '../../api/load-posts';
 import { PostsTemplate } from '../../templates/PostsTemplate';
 
-export default function AuthorPage({
-  posts,
-  setting,
-  variables,
-}: StrapiPostAndSettings) {
+export default function AuthorPage({ posts, setting, variables }: StrapiPostAndSettings) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -38,9 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async (
-  ctx,
-) => {
+export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async (ctx) => {
   let data = null;
   const variables = { authorSlug: ctx.params.slug as string };
 

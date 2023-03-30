@@ -5,10 +5,7 @@ import { theme } from '../../styles/theme';
 
 describe('<ToggleTheme />', () => {
   beforeEach(() => {
-    localStorage.setItem(
-      'theme',
-      JSON.stringify({ ...theme, name: 'inverted' }),
-    );
+    localStorage.setItem('theme', JSON.stringify({ ...theme, name: 'inverted' }));
   });
 
   afterEach(() => {
@@ -23,10 +20,7 @@ describe('<ToggleTheme />', () => {
   });
 
   it('should render input with default theme', () => {
-    localStorage.setItem(
-      'theme',
-      JSON.stringify({ ...theme, name: 'default' }),
-    );
+    localStorage.setItem('theme', JSON.stringify({ ...theme, name: 'default' }));
     renderTheme(<ToggleTheme />);
     const input = screen.getByRole('checkbox');
     expect(input).not.toBeChecked();

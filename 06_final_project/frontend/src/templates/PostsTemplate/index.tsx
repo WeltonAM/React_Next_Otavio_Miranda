@@ -12,11 +12,7 @@ export type PostsTemplateProps = {
   variables?: LoadPostsVariables;
 };
 
-export const PostsTemplate = ({
-  settings,
-  posts = [],
-  variables,
-}: PostsTemplateProps) => {
+export const PostsTemplate = ({ settings, posts = [], variables }: PostsTemplateProps) => {
   const [statePosts, setStatePosts] = useState(posts);
   const [stateVariables, setStateVariables] = useState(variables);
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -56,10 +52,7 @@ export const PostsTemplate = ({
 
       {statePosts && statePosts.length ? (
         <Styled.ButtonContainer>
-          <Styled.Button
-            onClick={handleLoadMorePosts}
-            disabled={buttonDisabled}
-          >
+          <Styled.Button onClick={handleLoadMorePosts} disabled={buttonDisabled}>
             {noMorePosts ? 'Sem mais posts' : 'Carregar mais'}
           </Styled.Button>
         </Styled.ButtonContainer>

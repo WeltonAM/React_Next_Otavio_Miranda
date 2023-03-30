@@ -9,19 +9,10 @@ export type HeaderProps = {
   showText?: boolean;
 };
 
-export const Header = ({
-  blogName,
-  blogDescription,
-  logo,
-  showText = true,
-}: HeaderProps) => {
+export const Header = ({ blogName, blogDescription, logo, showText = true }: HeaderProps) => {
   return (
     <Styled.Wrapper>
-      <LogoLink
-        link="/"
-        srcImg={logo}
-        text={`${blogName} - ${blogDescription}`}
-      />
+      <LogoLink link="/" srcImg={logo} text={`${blogName} - ${blogDescription}`} />
 
       {showText && (
         <Styled.Content>

@@ -61,18 +61,10 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
     <Styled.Wrapper>
       <ToggleTheme />
 
-      <Menu
-        links={settings.menuLink}
-        blogName={settings.blogName}
-        logo={settings.logo.url}
-      />
+      <Menu links={settings.menuLink} blogName={settings.blogName} logo={settings.logo.url} />
 
       <Styled.HeaderContainer>
-        <Header
-          blogName={settings.blogName}
-          blogDescription={settings.blogDescription}
-          logo={settings.logo.url}
-        />
+        <Header blogName={settings.blogName} blogDescription={settings.blogDescription} logo={settings.logo.url} />
       </Styled.HeaderContainer>
 
       <Styled.SearchContainer>
@@ -87,10 +79,7 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
         {searchDisabled ? (
           <Cancel className="search-cancel-icon" aria-label="Input Disabled" />
         ) : (
-          <CheckCircleOutline
-            className="search-ok-icon"
-            aria-label="Input enabled"
-          />
+          <CheckCircleOutline className="search-ok-icon" aria-label="Input enabled" />
         )}
       </Styled.SearchContainer>
 

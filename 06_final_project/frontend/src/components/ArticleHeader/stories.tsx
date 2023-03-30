@@ -14,10 +14,9 @@ export const Template: Story<ArticleHeaderProps> = (args) => {
     <div>
       <ArticleHeader {...args} />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, laborum
-        tempore repellendus neque est sequi quam inventore voluptate
-        reprehenderit, tenetur ut, molestias sunt aut doloribus dolorum
-        molestiae enim? Eligendi, molestiae!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, laborum tempore repellendus neque est sequi quam
+        inventore voluptate reprehenderit, tenetur ut, molestias sunt aut doloribus dolorum molestiae enim? Eligendi,
+        molestiae!
       </p>
     </div>
   );

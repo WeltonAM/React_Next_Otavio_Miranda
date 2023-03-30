@@ -20,12 +20,7 @@ export const PostTemplate = ({ settings, post }: PostTemplateProps) => {
         <PostTags tags={post.tags} />
       </Styled.TagsContainer>
 
-      <Comments
-        title={post.title}
-        slug={post.slug}
-        id={post.id}
-        allowComments={post.allowComments}
-      />
+      <Comments title={post.title} slug={post.slug} id={post.id} allowComments={post.allowComments} />
     </BaseTemplate>
   );
 };

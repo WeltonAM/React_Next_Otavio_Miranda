@@ -13,11 +13,7 @@ jest.mock('../graphql/queries', () => {
 describe('load-posts', () => {
   it('should call request with default variables', async () => {
     await loadPosts();
-    expect(request).toHaveBeenCalledWith(
-      config.graphqlURL,
-      'A_QUERY',
-      defaultLoadPostsVariables,
-    );
+    expect(request).toHaveBeenCalledWith(config.graphqlURL, 'A_QUERY', defaultLoadPostsVariables);
   });
 
   it('should call request with custom variables', async () => {

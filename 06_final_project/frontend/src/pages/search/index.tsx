@@ -1,18 +1,10 @@
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
-import {
-  defaultLoadPostsVariables,
-  loadPosts,
-  StrapiPostAndSettings,
-} from '../../api/load-posts';
+import { defaultLoadPostsVariables, loadPosts, StrapiPostAndSettings } from '../../api/load-posts';
 import { PostsTemplate } from '../../templates/PostsTemplate';
 
-export default function SearchPage({
-  posts,
-  setting,
-  variables,
-}: StrapiPostAndSettings) {
+export default function SearchPage({ posts, setting, variables }: StrapiPostAndSettings) {
   const router = useRouter();
 
   return (
@@ -27,9 +19,7 @@ export default function SearchPage({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<StrapiPostAndSettings> = async (
-  ctx,
-) => {
+export const getServerSideProps: GetServerSideProps<StrapiPostAndSettings> = async (ctx) => {
   let data = null;
   const query = ctx.query.q || '';
 

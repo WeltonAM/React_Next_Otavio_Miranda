@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { LogoLink } from '../LogoLink';
 import { MenuLink } from '../MenuLink';
 import * as Styled from './styles';
+import Link from 'next/link';
 
 export type MenuPropsLinks = {
   id: string;
@@ -28,16 +29,17 @@ export const Menu = ({ links = [], blogName, logo }: MenuProps) => {
 
   return (
     <>
-      <Styled.OpenClose
-        menuVisible={menuVisible}
-        href="#"
-        aria-label="Open or close menu"
-        title="Open or close menu"
-        onClick={handleOpenCloseMenu}
-      >
-        {menuVisible && <CloseIcon aria-label="Close menu" />}
-        {!menuVisible && <MenuIcon aria-label="Open menu" />}
-      </Styled.OpenClose>
+      <Link href="#">
+        <Styled.OpenClose
+          menuVisible={menuVisible}
+          aria-label="Open or close menu"
+          title="Open or close menu"
+          onClick={handleOpenCloseMenu}
+        >
+          {menuVisible && <CloseIcon aria-label="Close menu" />}
+          {!menuVisible && <MenuIcon aria-label="Open menu" />}
+        </Styled.OpenClose>
+      </Link>
 
       <Styled.Wrapper menuVisible={menuVisible} aria-hidden={!menuVisible}>
         <Styled.Nav>

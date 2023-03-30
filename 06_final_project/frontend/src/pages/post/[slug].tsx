@@ -47,9 +47,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async (
-  ctx,
-) => {
+export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async (ctx) => {
   let data = null;
 
   try {

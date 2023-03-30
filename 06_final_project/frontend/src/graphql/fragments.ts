@@ -62,7 +62,7 @@ export const GRAPHQL_FRAGMENTS = gql`
     title
     excerpt
     content
-    createdAt
+    created_at
     allowComments
     ...cover
     ...categories

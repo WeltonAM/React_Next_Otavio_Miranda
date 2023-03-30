@@ -10,7 +10,7 @@ export const GRAPHQL_QUERY = gql`
     $postSearch: String
     $authorSlug: String
     $tagSlug: String
-    $sort: String = "createdAt:desc"
+    $sort: String = "created_at:desc"
     $start: Int = 0
     $limit: Int = 10
   ) {
@@ -24,11 +24,7 @@ export const GRAPHQL_QUERY = gql`
       sort: $sort
       where: {
         slug: $postSlug
-        _or: [
-          { title_contains: $postSearch }
-          { content_contains: $postSearch }
-          { excerpt_contains: $postSearch }
-        ]
+        _or: [{ title_contains: $postSearch }, { content_contains: $postSearch }, { excerpt_contains: $postSearch }]
         categories: { slug: $categorySlug }
         author: { slug: $authorSlug }
         tags: { slug: $tagSlug }

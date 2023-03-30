@@ -10,20 +10,14 @@ export type ArticleMetaProps = {
   categories?: Category[];
 };
 
-export const ArticleMeta = ({
-  createdAt,
-  author = undefined,
-  categories = [],
-}: ArticleMetaProps) => {
+export const ArticleMeta = ({ createdAt, author = undefined, categories = [] }: ArticleMetaProps) => {
   return (
     <Styled.Wrapper>
       <p>
         {author && typeof author !== 'undefined' && (
           <>
             <span>Por </span>
-            <Link href={`/author/${author.slug}`}>
-              <a>{author.displayName}</a>
-            </Link>
+            <Link href={`/author/${author.slug}`}>{author.displayName}</Link>
             <span className="separator"> | </span>
           </>
         )}
@@ -37,9 +31,7 @@ export const ArticleMeta = ({
               {categories.map((category) => {
                 return (
                   <span key={`article-meta-cat-${category.id}`}>
-                    <Link href={`/category/${category.slug}`}>
-                      <a>{category.displayName}</a>
-                    </Link>
+                    <Link href={`/category/${category.slug}`}>{category.displayName}</Link>
                   </span>
                 );
               })}

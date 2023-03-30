@@ -54,8 +54,8 @@
       "dominant": true
     },
     "author": {
-      "model": "author",
-      "via": "posts"
+      "via": "posts",
+      "model": "author"
     }
   }
 }

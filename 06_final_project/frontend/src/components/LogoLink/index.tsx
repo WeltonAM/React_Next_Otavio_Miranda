@@ -9,20 +9,15 @@ export type LogoLinkProps = {
   newTab?: boolean;
 };
 
-export const LogoLink = ({
-  text,
-  srcImg = '',
-  link,
-  newTab = false,
-}: LogoLinkProps) => {
+export const LogoLink = ({ text, srcImg = '', link, newTab = false }: LogoLinkProps) => {
   const nextLink = link.match(/^\//) ? true : false;
   const target = newTab ? '_blank' : '_self';
 
   if (nextLink) {
     return (
       <Heading size="small" uppercase>
-        <Link href={link} passHref>
-          <Styled.Container target={target}>
+        <Link href={link} target={target} passHref>
+          <Styled.Container>
             {!!srcImg && <img src={srcImg} alt={text} />}
             {!srcImg && text}
           </Styled.Container>
@@ -33,10 +28,12 @@ export const LogoLink = ({
 
   return (
     <Heading size="small" uppercase>
-      <Styled.Container href={link} target={target}>
-        {!!srcImg && <img src={srcImg} alt={text} />}
-        {!srcImg && text}
-      </Styled.Container>
+      <Link href={link} target={target}>
+        <Styled.Container>
+          {!!srcImg && <img src={srcImg} alt={text} />}
+          {!srcImg && text}
+        </Styled.Container>
+      </Link>
     </Heading>
   );
 };

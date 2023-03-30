@@ -5,10 +5,7 @@ type MenuBehaviorProps = {
   menuVisible: boolean;
 };
 
-const wrapperChanger = (
-  menuVisible: MenuBehaviorProps['menuVisible'],
-  theme: DefaultTheme,
-) => css`
+const wrapperChanger = (menuVisible: MenuBehaviorProps['menuVisible'], theme: DefaultTheme) => css`
   left: ${menuVisible ? '0' : '-30rem'};
   overflow-y: ${menuVisible ? 'auto' : 'hidden'};
 
@@ -55,10 +52,7 @@ export const Logo = styled.div`
   `}
 `;
 
-const buttonChanger = (
-  menuVisible: MenuBehaviorProps['menuVisible'],
-  theme: DefaultTheme,
-) => css`
+const buttonChanger = (menuVisible: MenuBehaviorProps['menuVisible'], theme: DefaultTheme) => css`
   left: ${menuVisible ? '26rem' : '1rem'};
   color: ${menuVisible ? theme.colors.secondary : theme.colors.white};
 
@@ -67,7 +61,7 @@ const buttonChanger = (
   }
 `;
 
-export const OpenClose = styled.a<MenuBehaviorProps>`
+export const OpenClose = styled.p<MenuBehaviorProps>`
   ${({ theme, menuVisible }) => css`
     position: fixed;
     top: ${theme.spacings.medium};
