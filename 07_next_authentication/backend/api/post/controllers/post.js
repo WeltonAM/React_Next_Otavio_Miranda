@@ -8,9 +8,10 @@ module.exports = {
    */
 
   async create(ctx) {
+    let entity;
+
     const { id } = ctx.state.user;
 
-    let entity;
     if (ctx.is('multipart')) {
       const { data, files } = parseMultipartData(ctx);
       entity = await strapi.services.post.create({
