@@ -10,6 +10,6 @@ export const GQL_FRAGMENT_POST = gql`
       username
       email
     }
-    createdAt
+    created_at
   }
 `;

@@ -75,6 +75,7 @@ export const Input = styled.input<StyledInputType>`
     padding-right: 3.7rem;
     border-radius: ${theme.spacings.tiny};
     outline: none;
+    resize: none;
 
     &::placeholder {
       visibility: hidden;
