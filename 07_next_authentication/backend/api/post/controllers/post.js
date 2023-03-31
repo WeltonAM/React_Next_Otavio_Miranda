@@ -8,10 +8,9 @@ module.exports = {
    */
 
   async create(ctx) {
-    let entity;
-
     const { id } = ctx.state.user;
 
+    let entity;
     if (ctx.is('multipart')) {
       const { data, files } = parseMultipartData(ctx);
       entity = await strapi.services.post.create({
@@ -56,5 +55,54 @@ module.exports = {
     };
 
     return await strapi.services.post.count(query);
+  },
+
+  async update(ctx) {
+    const { id } = ctx.params;
+
+    let entity;
+
+    const post = await strapi.services.post.find({
+      id,
+      user: ctx.state.user.id
+    });
+
+    if (!post || !post.length) {
+      return ctx.unauthorized('You cannot update this post.');
+    }
+
+    if (ctx.is('multipart')) {
+      const { data, files } = parseMultipartData(ctx);
+      entity = await strapi.services.post.update({ id }, {
+        ...data,
+        user: ctx.state.user.id
+      }, {
+        files,
+      });
+    } else {
+      entity = await strapi.services.post.update({ id }, {
+        ...ctx.request.body,
+        user: ctx.state.user.id
+      });
+    }
+
+    return sanitizeEntity(entity, { model: strapi.models.post });
+  },
+
+
+  async delete(ctx) {
+    const { id } = ctx.params;
+
+    const post = await strapi.services.post.find({
+      id,
+      user: ctx.state.user.id
+    });
+
+    if (!post || !post.length) {
+      return ctx.unauthorized('You cannot delete this post.');
+    }
+
+    const entity = await strapi.services.post.delete({ id });
+    return sanitizeEntity(entity, { model: strapi.models.post });
   },
 };

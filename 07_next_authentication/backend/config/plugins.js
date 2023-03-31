@@ -11,4 +11,21 @@ module.exports = ({ env }) => ({
       delete: {},
     },
   },
+  email: {
+    provider: 'smtp',
+    providerOptions: {
+      host: env('SMTP_HOST'),
+      port: env.int('SMTP_PORT'),
+      secure: true,
+      username: env('SMTP_USERNAME'),
+      password: env('SMTP_PASSWORD'),
+      rejectUnauthorized: true,
+      requireTLS: true,
+      connectionTimeout: 1,
+    },
+    settings: {
+      from: env('SMTP_FROM'),
+      replyTo: env('SMTP_REPLY_TO'),
+    },
+  },
 });
