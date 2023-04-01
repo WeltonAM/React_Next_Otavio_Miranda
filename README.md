@@ -23,4 +23,7 @@
 10: TypeScript;
 
 ## 👓 Take a look at the:
-[Certificate]()
+[Certificate](https://bit.ly/40T2cfo)
+
+## 👓 Watch a sample with the final project:
+[Certificate](https://www.linkedin.com/feed/update/urn:li:activity:7047927539360514048/)
