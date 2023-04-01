@@ -38,24 +38,24 @@
       "type": "richtext",
       "required": true
     },
-    "allowComments": {
-      "type": "boolean",
-      "default": true,
-      "required": true
+    "categories": {
+      "collection": "category",
+      "via": "posts",
+      "dominant": true
     },
     "tags": {
       "collection": "tag",
       "via": "posts",
       "dominant": true
     },
-    "categories": {
-      "collection": "category",
-      "via": "posts",
-      "dominant": true
-    },
     "author": {
-      "via": "posts",
-      "model": "author"
+      "model": "author",
+      "via": "posts"
+    },
+    "allowComments": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

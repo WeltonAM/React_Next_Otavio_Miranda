@@ -5,12 +5,12 @@ import { formatDate } from '../../utils/format-date';
 import * as Styled from './styles';
 
 export type ArticleMetaProps = {
-  createdAt: string;
+  created_at: string;
   author?: Author;
   categories?: Category[];
 };
 
-export const ArticleMeta = ({ createdAt, author = undefined, categories = [] }: ArticleMetaProps) => {
+export const ArticleMeta = ({ created_at, author = undefined, categories = [] }: ArticleMetaProps) => {
   return (
     <Styled.Wrapper>
       <p>
@@ -22,7 +22,7 @@ export const ArticleMeta = ({ createdAt, author = undefined, categories = [] }: 
           </>
         )}
 
-        <time dateTime={createdAt}>{formatDate(createdAt)}</time>
+        <time dateTime={created_at}>{formatDate(created_at)}</time>
 
         {categories && categories.length > 0 && (
           <>

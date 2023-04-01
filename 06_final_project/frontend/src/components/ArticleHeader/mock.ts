@@ -1,7 +1,7 @@
 import { ArticleHeaderProps } from '.';
 import { data } from '../../api/dados.json';
 
-const { title, excerpt, cover, author, categories, createdAt } = data.posts[0];
+const { title, excerpt, cover, author, categories, created_at } = data.posts[0];
 
 export default {
   title,
@@ -9,5 +9,5 @@ export default {
   cover,
   author,
   categories,
-  createdAt,
+  created_at,
 } as ArticleHeaderProps;

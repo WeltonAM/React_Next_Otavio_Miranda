@@ -7,10 +7,10 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi",
-    "postinstall": "cd plugins/wysiwyg && npm i"
+    "strapi": "strapi"
   },
   "dependencies": {
+    "graphql": "^16.6.0",
     "knex": "0.21.18",
     "mysql": "2.18.1",
     "strapi": "3.6.9",
@@ -23,21 +23,18 @@
     "strapi-plugin-i18n": "3.6.9",
     "strapi-plugin-upload": "3.6.9",
     "strapi-plugin-users-permissions": "3.6.9",
-    "strapi-provider-upload-cloudinary": "^3.6.11",
+    "strapi-provider-upload-cloudinary": "^3.5.0",
     "strapi-utils": "3.6.9"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "eedccd04-8c53-4db1-a905-5a664b3ce2c2"
+    "uuid": "91a977ad-2ed3-4426-8d47-258289519e89"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
     "npm": "^6.0.0"
   },
-  "license": "MIT",
-  "resolutions": {
-    "graphql": "^14.1.0"
-  }
+  "license": "MIT"
 }

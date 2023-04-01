@@ -1,7 +1,7 @@
 import { PostProps } from '.';
 import { data } from '../../api/dados.json';
 
-const { title, excerpt, cover, content, author, categories, createdAt } = data.posts[0];
+const { title, excerpt, cover, content, author, categories, created_at } = data.posts[0];
 
 export default {
   title,
@@ -10,5 +10,5 @@ export default {
   content,
   author,
   categories,
-  createdAt,
+  created_at,
 } as PostProps;

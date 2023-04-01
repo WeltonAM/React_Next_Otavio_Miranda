@@ -10,13 +10,13 @@ export type ArticleHeaderProps = {
   cover: StrapiImage;
 } & ArticleMetaProps;
 
-export const ArticleHeader = ({ title, excerpt, cover, author, categories, createdAt }: ArticleHeaderProps) => {
+export const ArticleHeader = ({ title, excerpt, cover, author, categories, created_at }: ArticleHeaderProps) => {
   return (
     <Styled.Wrapper>
       <Heading size="huge">{title}</Heading>
       <Styled.Excerpt>{excerpt}</Styled.Excerpt>
       <Styled.Cover src={cover.url} alt={title} />
-      <ArticleMeta categories={categories} author={author} createdAt={createdAt} />
+      <ArticleMeta categories={categories} author={author} created_at={created_at} />
     </Styled.Wrapper>
   );
 };

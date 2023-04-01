@@ -7,7 +7,7 @@ export type PostProps = ArticleHeaderProps & {
   content: string;
 };
 
-export const Post = ({ title, author, categories, content, cover, createdAt, excerpt, id }: PostProps) => {
+export const Post = ({ title, author, categories, content, cover, created_at, excerpt, id }: PostProps) => {
   return (
     <Styled.Wrapper>
       <PostContainer size="max">
@@ -18,7 +18,7 @@ export const Post = ({ title, author, categories, content, cover, createdAt, exc
           excerpt={excerpt}
           id={id}
           cover={cover}
-          createdAt={createdAt}
+          created_at={created_at}
         />
       </PostContainer>
 

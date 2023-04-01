@@ -33,5 +33,7 @@ export const loadPosts = async (variables: LoadPostsVariables = {}): Promise<Str
     ...variables,
   });
 
+  console.log(config.defaultSlug);
+
   return data;
 };

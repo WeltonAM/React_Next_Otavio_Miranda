@@ -12,9 +12,7 @@
     },
     "text": {
       "type": "string",
-      "required": true,
-      "maxLength": 150,
-      "minLength": 3
+      "required": true
     },
     "newTab": {
       "type": "boolean",

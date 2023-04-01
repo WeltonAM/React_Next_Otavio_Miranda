@@ -8,7 +8,7 @@ export default {
   component: ArticleMeta,
   args: mock,
   argTypes: {
-    createdAt: {
+    created_at: {
       control: {
         type: 'date',
       },

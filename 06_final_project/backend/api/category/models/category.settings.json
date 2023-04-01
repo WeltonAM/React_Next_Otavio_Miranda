@@ -17,7 +17,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "displayName"
+      "targetField": "displayName",
+      "required": true
     },
     "posts": {
       "via": "categories",

@@ -18,7 +18,7 @@ describe('<ArticleMeta />', () => {
   it('should format date', () => {
     renderTheme(<ArticleMeta {...props} />);
 
-    expect(screen.getByText('2 de mar. de 2021')).toHaveAttribute('datetime', props.createdAt);
+    expect(screen.getByText('2 de mar. de 2021')).toHaveAttribute('datetime', props.created_at);
   });
 
   it('should match snapshot', () => {
